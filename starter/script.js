@@ -362,3 +362,255 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
 });
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURES
+
+/*
+//Converting & Checking Numbers
+console.log(23 === 23.0);
+
+// Base 10: 0 to 9
+//Binary 2: 0 and 1
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 === 0.3);
+
+// Converted Strings to Number
+console.log(Number('23'));
+console.log(+'23');
+
+// Parsing (Accepts second argument)
+console.log(Number.parseInt('30px'), 10);
+console.log(Number.parseInt('e30'), 10);
+
+console.log(Number.parseInt('2.5rem')); // Doesn't read decimal number
+
+// Reads number out of a string
+console.log(Number.parseFloat('2.5rem')); // Reads decimal number
+// console.log(parseFloat('2.5rem')); Old-school way
+
+// Check if value is not NaN
+console.log(Number.isNaN(20));
+console.log(Number.isNaN('20'));
+console.log(Number.isNaN(+'20X'));
+console.log(Number.isNaN(23 / 0));
+
+// Checking if value is a number
+console.log(Number.isFinite(20));
+console.log(Number.isFinite('20'));
+console.log(Number.isFinite(+'20X'));
+console.log(Number.isFinite(23 / 0));
+
+console.log(Number.isFinite(20));
+console.log(Number.isFinite(23.0));
+console.log(Number.isFinite(23 / 0));
+*/
+
+/*
+//////////////////////////////////////
+// Math & Rounding
+console.log(Math.sqrt(25));
+console.log(25 ** (1 / 2));
+console.log(8 ** (1 / 3));
+
+console.log(Math.max(5, 18, 23, 11, 2));
+console.log(Math.max(5, 18, '23', 11, 2));
+console.log(Math.max(5, 18, '23px', 11, 2));
+
+console.log(Math.min(5, 18, 23, 11, 2));
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (min - max) + 1) + min;
+console.log(randomInt(10, 20));
+
+// Rounding Integers (Does type coercion)
+console.log(Math.trunc(23.3)); // Remove Decimal
+
+console.log(Math.round(23.3)); // Normal rounding
+console.log(Math.round(23.9)); // Normal rounding
+
+console.log(Math.ceil(23.3)); // Round up
+console.log(Math.ceil(23.9)); // Round up
+
+console.log(Math.floor(23.3)); // Round down
+console.log(Math.floor('23.9')); // Round down
+
+console.log(Math.trunc(-23.3)); // Round down
+console.log(Math.floor(-23.3)); // Round up
+
+// Rounding Decimals (floating point numbers)
+console.log((2.7).toFixed(0));
+console.log((2.7).toFixed(3));
+console.log((2.345).toFixed(2));
+console.log(+(2.345).toFixed(2));
+*/
+
+/*
+/////////////////////////////////////
+// Remainder operator
+console.log(5 % 2);
+console.log(5 / 2); // 5 = 2 * 2 + 1
+
+console.log(8 % 3);
+console.log(8 / 3); // 8 = 2 * 3 + 2
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
+*/
+
+/*
+///////////////////////////////////////
+// Working With BigInt
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+// Wrong way
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+// The us of BigInt
+console.log(2345098765498543223456987n);
+console.log(BigInt(2345098765498543223456987));
+console.log(BigInt(2345098765)); // The construction function should be used for small operations
+
+// Operations
+console.log(10000n + 10000n);
+console.log(2345098765498543223456987n * 10000n);
+console.log(10000n + 10000n);
+// console.log(Math.sqrt(16n));
+
+// Don't mix BigInt with regular numbers
+const huge = 2345098765498543223456987n;
+const num = 23;
+// console.log(huge * num); // Won't work
+console.log(huge * BigInt(num)); // Will work
+
+// Exceptions
+console.log(20n > 15); // will work
+console.log(20n === 20); // will work
+console.log(20n == 20); // wrong
+console.log(typeof 20n);
+
+console.log(huge + ' is REALLY big!!!'); // String
+
+// Divisions
+console.log(10 / 3);
+console.log(10n / 3n);
+console.log(12n / 3n);
+*/
+
+/*
+//////////////////////////////////////////
+// Creating Dates
+
+// Create a date
+const now = new Date();
+console.log(now);
+
+// Passing strings
+console.log(new Date('Fri Apr 14 2023 00:00:00 GMT+0100'));
+console.log(new Date('December 24, 2022'));
+
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31, 15, 23, 5)); // Auto-correct to the next day if you exceed the month
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+
+
+// Working with Dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142253380000)); // Reverse
+
+console.log(Date.now()); // Current Timestamp
+
+// Setting Date
+future.setFullYear(2040);
+console.log(future);
+*/
+
+/*
+//////////////////////////////////////////
+// Operations With Dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(+future);
+
+const calcDaysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+
+const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
+console.log(days1);
+*/
+
+/*
+//////////////////////////////////////////
+// Internationalizing Numbers
+const num = 3884764.23;
+
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'NGN', // You have to set the currency cuz it's not determined by the locale
+  // useGrouping: false,
+};
+console.log('Nigeria', new Intl.NumberFormat('en-US', options).format(num));
+console.log('Germany', new Intl.NumberFormat('de-DE', options).format(num));
+console.log('Syria', new Intl.NumberFormat('ar-SY', options).format(num));
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language, options).format(num)
+);
+*/
+
+/*
+//////////////////////////////////////////
+// Timers:
+
+// SetTimeout
+const ingredients = ['olives', 'spinach'];
+const pizzaTimeout = setTimeout(
+  (ing1, ing2) =>
+    console.log(`Here is your Pizza 🍕 with ${ing1}🌹 and ${ing2}🥦`),
+  3000,
+  ...ingredients
+);
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimeout);
+
+// SetInterval
+setInterval(() => {
+  const now = new Date();
+  console.log(now);
+}, 1000);
+*/
